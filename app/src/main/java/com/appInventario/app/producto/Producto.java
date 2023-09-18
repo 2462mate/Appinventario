@@ -15,7 +15,7 @@ public class Producto {
 
     @ManyToOne
     @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
+    private Categoria categorias;
 
     public Integer getId() {
         return id;
@@ -32,7 +32,7 @@ public class Producto {
 
         this.nombre = nombre;
         this.precio = precio;
-        this.categoria = categoria;
+        this.categorias = categoria;
     }
 
     public void setId(Integer id) {
@@ -56,10 +56,10 @@ public class Producto {
     }
 
     public Categoria getCategoria() {
-        return categoria;
+        return categorias;
     }
 
     public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+        this.categorias = categoria;
     }
 }

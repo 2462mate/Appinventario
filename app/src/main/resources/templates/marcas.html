@@ -26,43 +26,41 @@
     </div>
 </nav>
 
-   <div class = "container text-center">
-       <div>
-           <h1>Bienvenido a la Aplicacion de inventario</h1>
+<div class="container text-center">
+    <div>
+        <h1> Listas de marcas</h1>
+    </div>
+    <br>
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Categorias</th>
+                <th>Acciones</th>
 
-       </div>
-       <div class = "p-2">
-           <a class = "h2" th:href="@{/categorias}">Lista de Categorias</a>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="marca : ${listaMarcas}">
+                <td th:text="${marca.id}"></td>
+                <td th:text="${marca.nombre}"></td>
+                <td th:text="${marca.categorias}"></td>
 
-       </div>
-       <div class = "p-2">
-           <a class = "h2" th:href="@{/categorias/nuevo}">Agregar  Categorias</a>
+                <td>
+                    <a th:href="@{'/marcas/editar'+'/'+ ${marca.id}}" class="btn btn-info">Editar</a>
+                    &nbsp;
+                    <a th:href="@{'/marcas/eliminar'+'/'+ ${marca.id}}" class="btn btn-danger">Eliminar</a>
+                </td>
 
-       </div>
-       <div class = "p-2">
-           <a class = "h2" th:href="@{/productos}">Lista de Productos</a>
-
-       </div>
-       <div class = "p-2">
-           <a class = "h2" th:href="@{/productos/nuevo}">Agregar Producto</a>
-
-       </div>
-
-       <div class = "p-2">
-           <a class = "h2" th:href="@{/marcas}">Lista de Marca</a>
-
-       </div>
-       <div class = "p-2">
-           <a class = "h2" th:href="@{/marcas/nueva}">Agregar  Marca</a>
-
-       </div>
-
-
-
-
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
 
-   </div>
+</div>
 
 
 
